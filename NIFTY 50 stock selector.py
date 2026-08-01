@@ -240,7 +240,7 @@ if __name__ == '__main__':
     # If the target time has already passed today, and print the message
     if target_start_time < datetime.now():
         #target_start_time += timedelta(days=1)      # schedule it for tomorrow
-        print (f"Adangomma, the specified time {target_start_time} has already passed daa....!!")
+        print (f"the specified time {target_start_time} has already passed daa....!!")
         print ("exiting the program !!")
         sys.exit(1)  # Exit with a non-zero status (indicating an error)
     
