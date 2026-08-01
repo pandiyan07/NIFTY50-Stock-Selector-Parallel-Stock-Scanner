@@ -145,24 +145,24 @@ def DATA_FETCHER(start, end):
         q = n.stock_quote(eqList[i])
         individual_stock_data = {}
         
-        # individual_stock_data["lastPrice"] = q['priceInfo']['lastPrice']
+        individual_stock_data["lastPrice"] = q['priceInfo']['lastPrice']
         individual_stock_data["pChange"] = q['priceInfo']['pChange']
-        # individual_stock_data["previousClose"] = q['priceInfo']['previousClose']
+        individual_stock_data["previousClose"] = q['priceInfo']['previousClose']
         individual_stock_data["sector"] = q['industryInfo']['sector']
         individual_stock_data["basicIndustry"] = q['industryInfo']['basicIndustry']
         
         # Append values using update() method
         stock_data.update({eqList[i]:individual_stock_data})
-        """
+        
         for key,value in stock_data.items():
             print(f"{key}  =  {value}")
-        """
+        
         print(f"\nDATA FETCHER :- The current price of {eqList[i]} stock is = {stock_data[eqList[i]]['lastPrice']}")
     end_time = time.time()
     print(f"Data fetching completed in {end_time - start_time:.2f} seconds.")
-    '''print ("The stocks are :-/n")
+    print ("The stocks are :-/n")
     for index, item in enumerate(eqList):
-    print(f"{index}) {item}")'''
+    print(f"{index}) {item}")
     
     
     # Calculating RSI value Example usage
@@ -214,15 +214,12 @@ def WORKER_PROCESS_GENERATOR(num_of_process):
         processes.append(data_fetching_process)
         # setting start method as fork
         # multiprocessing.set_start_method('fork')  
-        # #fork is not supported in Windows, as Windows & MacOS supports spawn only
+        #fork is not supported in Windows, as Windows & MacOS supports spawn only
         data_fetching_process.start()
         print ("-----------------------------------------------------------------------------------------------")
     
     
-    '''
-    print(f"\n{multiprocessing.get_start_method()}")
-    print(f"\n{processes}\n")
-    '''
+    
     # Wait for all threads to finish
     for data_fetching_process in processes:
         print ("JOINING THE THREADSSS....................\n\n")
@@ -250,15 +247,15 @@ if __name__ == '__main__':
     
     #---------------------Multiprocess block----------------------#
     
-    print ("Bhaaaaiiiiiiii tera eqList lenghth :- ",len(eqList))
+    print ("eqList lenghth :- ",len(eqList))
     WORKER_PROCESS_GENERATOR(len(eqList))
     
-    """
+    
     # Print each key-value pair on separate lines
     for key, value in q['priceInfo'].items():
         print(f"{key}: {value}")
     print (f"\n\n{q['priceInfo']['lastPrice']}\n{q['priceInfo']['pChange']}\n{q['priceInfo']['previousClose']}")
-    """
+    
 
     # Get the Total memory usage
     current_memory_usage = tracemalloc.get_traced_memory()[0]/(1024*1024)
