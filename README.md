@@ -2,6 +2,8 @@
 
 **NIFTY 50 Stock Selector & Parallel Market Scanner**
 
+Built on - May 2024
+
 ## Table of Contents
 
 -   [About The Project](#about-the-project)
@@ -21,7 +23,7 @@
 
 ## About The Project
 
-Built on - May 2024, this project is a multiprocessing-based stock scanner for the Indian
+This project is a multiprocessing-based stock scanner for the Indian
 stock market. It retrieves NIFTY 50 stocks (or a custom watchlist),
 schedules execution at a predefined market time, fetches live market
 data from NSE, computes basic technical indicators (RSI, DMI and ADX),
@@ -71,8 +73,8 @@ pip install pandas nselib jugaad-data
 ### Installation
 
 ``` bash
-git clone https://https://github.com/pandiyan07/NIFTY50-Stock-Selector-Parallel-Stock-Scanner.git
-cd nifty50-stock-selector
+git clone https://github.com/pandiyan07/NIFTY50-Stock-Selector-Parallel-Stock-Scanner.git
+cd NIFTY50-Stock-Selector-Parallel-Stock-Scanner
 pip install -r requirements.txt
 python "NIFTY 50 stock selector.py"
 ```
